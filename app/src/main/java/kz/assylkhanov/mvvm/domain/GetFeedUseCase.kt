@@ -1,8 +1,10 @@
 package kz.assylkhanov.mvvm.domain
 
+import kotlinx.coroutines.flow.Flow
+
 /**
  * @author a.asylkhanov
  */
 interface GetFeedUseCase {
-    fun invoke(): List<Post>
+    suspend fun invoke(): Flow<List<Post>>
 }

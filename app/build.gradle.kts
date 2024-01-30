@@ -1,6 +1,7 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id("kotlin-kapt")
 }
 
 android {
@@ -48,4 +49,15 @@ dependencies {
 
     implementation("io.insert-koin:koin-core:3.2.0")
     implementation("io.insert-koin:koin-android:3.2.0")
+
+    val room_version = "2.2.5"
+
+    implementation("androidx.room:room-runtime:2.6.1")
+
+    kapt("androidx.room:room-compiler:2.6.1")
+    implementation ("androidx.room:room-ktx:2.6.1")
+
+// optional - Kotlin Extensions and Coroutines support for Room implementation "androidx.room:room-ktx:$room_version"
+
+// optional - RxJava support for Room implementation "androidx.room:room-rxjava2:$room_version"
 }

@@ -1,7 +1,9 @@
 package kz.assylkhanov.mvvm
 
 import android.app.Application
+import kz.assylkhanov.mvvm.di.dbModule
 import kz.assylkhanov.mvvm.di.mainModule
+import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 
 /**
@@ -13,7 +15,11 @@ class MyApplication : Application() {
         super.onCreate()
 
         startKoin {
-            modules(mainModule)
+            androidContext(this@MyApplication)
+            modules(mainModule, dbModule)
         }
+
+
+
     }
 }

@@ -1,5 +1,6 @@
 package kz.assylkhanov.mvvm.data
 
+import kotlinx.coroutines.flow.Flow
 import kz.assylkhanov.mvvm.domain.Post
 
 /**
@@ -7,5 +8,7 @@ import kz.assylkhanov.mvvm.domain.Post
  */
 interface Repository {
 
-    fun getFeed(): List<Post>
+    suspend fun getFeed(): Flow<List<Post>>
+
+    suspend fun addPost(post: Post)
 }
